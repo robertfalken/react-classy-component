@@ -11,7 +11,17 @@ yarn add react-classy-component
 ## Use
 
 ```ts
+// Button.tsx
 import { rcc } from "react-classy-component";
 
-const Button = rcc.button`bg-blue-500 text-white`;
+export const Button = rcc.button`bg-blue-500 text-white`;
+
+// Somewhere else in your app
+import { Button } from "./Button";
+
+const Component = () => (
+  <div>
+    <Button>Click me!</Button>
+  </div>
+)
 ```
