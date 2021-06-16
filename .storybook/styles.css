@@ -1,0 +1,6 @@
+.red-text { color: red; }
+.blue-text-important { color: blue !important; }
+.dashed-border { border: 2px dashed blue; }
+.yellow-background { background-color: yellow; }
+.huge-text { font-size: 50px; }
+.margin { margin: 10px 0; }
