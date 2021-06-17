@@ -46,11 +46,87 @@ describe("rcc", () => {
     });
   });
 
-  describe("div", () => {
-    it("adds class", () => {
-      const Div = rcc.div`div-class`;
-      const { container } = render(<Div />);
-      expect(container.firstChild).toHaveClass("div-class");
+  describe("generic elements", () => {
+    describe("div", () => {
+      it("adds class", () => {
+        const Div = rcc.div`div-class`;
+        const { container } = render(<Div />);
+        expect(container.firstChild).toHaveClass("div-class");
+      });
+    });
+
+    describe("span", () => {
+      it("adds class", () => {
+        const Span = rcc.span`span-class`;
+        const { container } = render(<Span />);
+        expect(container.firstChild).toHaveClass("span-class");
+      });
+    });
+
+    describe("section", () => {
+      it("adds class", () => {
+        const Section = rcc.section`section-class`;
+        const { container } = render(<Section />);
+        expect(container.firstChild).toHaveClass("section-class");
+      });
+    });
+
+    describe("hr", () => {
+      it("adds class", () => {
+        const Hr = rcc.hr`hr-class`;
+        const { container } = render(<Hr />);
+        expect(container.firstChild).toHaveClass("hr-class");
+      });
+    });
+  });
+
+  describe("headings", () => {
+    describe("h1", () => {
+      it("adds class", () => {
+        const H1 = rcc.h1`h1-class`;
+        const { container } = render(<H1 />);
+        expect(container.firstChild).toHaveClass("h1-class");
+      });
+    });
+
+    describe("h2", () => {
+      it("adds class", () => {
+        const H2 = rcc.h2`h2-class`;
+        const { container } = render(<H2 />);
+        expect(container.firstChild).toHaveClass("h2-class");
+      });
+    });
+
+    describe("h3", () => {
+      it("adds class", () => {
+        const H3 = rcc.h3`h3-class`;
+        const { container } = render(<H3 />);
+        expect(container.firstChild).toHaveClass("h3-class");
+      });
+    });
+
+    describe("h4", () => {
+      it("adds class", () => {
+        const H4 = rcc.h4`h4-class`;
+        const { container } = render(<H4 />);
+        expect(container.firstChild).toHaveClass("h4-class");
+      });
+    });
+
+    describe("h5", () => {
+      it("adds class", () => {
+        const H5 = rcc.h5`h5-class`;
+        const { container } = render(<H5 />);
+        expect(container.firstChild).toHaveClass("h5-class");
+      });
+    });
+
+    describe("h6", () => {
+      it("adds class", () => {
+        const H6 = rcc.h6`h6-class`;
+        const { container } = render(<H6 />);
+        expect(container.firstChild).toHaveClass("h6-class");
+      });
     });
   });
 
@@ -59,6 +135,38 @@ describe("rcc", () => {
       const Button = rcc.button``;
       const { container } = render(<Button type="button" />);
       expect(container.firstChild).toHaveAttribute("type", "button");
+    });
+  });
+
+  describe("anchor", () => {
+    it("accepts href attribute", () => {
+      const A = rcc.a``;
+      const { container } = render(<A href="/path" />);
+      expect(container.firstChild).toHaveAttribute("href", "/path");
+    });
+  });
+
+  describe("label", () => {
+    it("accepts htmlFor attribute", () => {
+      const Label = rcc.label``;
+      const { container } = render(<Label htmlFor="some-id" />);
+      expect(container.firstChild).toHaveAttribute("for", "some-id");
+    });
+  });
+
+  describe("img", () => {
+    it("accepts src attribute", () => {
+      const Img = rcc.img``;
+      const { container } = render(<Img src="img.png" />);
+      expect(container.firstChild).toHaveAttribute("src", "img.png");
+    });
+  });
+
+  describe("select", () => {
+    it("accepts multiple attribute", () => {
+      const Select = rcc.select``;
+      const { container } = render(<Select multiple />);
+      expect(container.firstChild).toHaveAttribute("multiple");
     });
   });
 });

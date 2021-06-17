@@ -93,3 +93,130 @@ rcc.div = function<T>(
     ...expressions
   );
 };
+
+rcc.a = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.AnchorHTMLAttributes<HTMLAnchorElement> & T>("a")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.label = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.LabelHTMLAttributes<HTMLLabelElement> & T>("label")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.span = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLElement> & T>("span")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.hr = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLElement> & T>("hr")(args, ...expressions);
+};
+
+rcc.h1 = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLHeadingElement> & T>("h1")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.h2 = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLHeadingElement> & T>("h2")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.h3 = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLHeadingElement> & T>("h3")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.h4 = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLHeadingElement> & T>("h4")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.h5 = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLHeadingElement> & T>("h5")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.h6 = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLHeadingElement> & T>("h6")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.img = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.ImgHTMLAttributes<HTMLImageElement> & T>("img")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.select = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.SelectHTMLAttributes<HTMLSelectElement> & T>("select")(
+    args,
+    ...expressions
+  );
+};
+
+rcc.section = function<T>(
+  args: { raw: readonly string[] },
+  ...expressions: Expression[]
+) {
+  return rcc<React.HTMLAttributes<HTMLElement> & T>("section")(
+    args,
+    ...expressions
+  );
+};
