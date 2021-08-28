@@ -76,3 +76,29 @@ Now `bg-blue-500` will only be rendered if the `primary` prop is truthy. And, yo
 <button class="text-white p-2 rounded bg-blue-500">Click me!</button>
 <button class="text-white p-2 rounded bg-red-500">I am dangerous!</button>
 ```
+
+### Advanced conditions
+
+If you need more advanced conditions, instead of using a simple object, you can pass in a function that returns the classes you want to apply. The function will be called with the props passed in to your component.
+
+```ts
+interface Props {
+  variant?: "primary" | "secondary";
+}
+
+export const Button = rcc.button<Props>`
+text-white p-2 rounded
+${(props: Props): string => {
+  if (props.variant === "primary") return "bg-blue-500";
+  if (props.variant === "secondary") return "bg-yellow-500";
+
+  return "bg-gray-500";
+}}
+`;
+```
+
+And to use it as a secondary button 👇
+
+```ts
+<Button variant="secondary">A secondary button</Button>
+```
