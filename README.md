@@ -41,8 +41,38 @@ const Component = () => (
 Will render 👇
 
 ```html
-<button class="bg-blue-500 text-white p-2 rounded m-5" type="button">Click me!</button>
+<button class="bg-blue-500 text-white p-2 rounded m-5" type="button">
+  Click me!
+</button>
 ```
 #### Preview
 <img width="108" alt="rendered" src="https://user-images.githubusercontent.com/261929/131214272-4b8cb9e1-d6aa-432f-85c0-d8e55fb0dfcf.png">
 
+### Conditional rendering
+
+You can specify custom props to render variants of your component.
+
+```ts
+export const Button = rcc.button<{
+  primary?: boolean;
+  danger?: boolean;
+}>`
+text-white p-2 rounded
+${{
+  primary: "bg-blue-500",
+  danger: "bg-red-500",
+}}
+`;
+```
+
+```html
+<Button primary>Click me!</Button>
+<Button danger>I am dangerous!</Button>
+```
+
+Now `bg-blue-500` will only be rendered if the `primary` prop is truthy. And, you guessed it, `bg-red-500` will only be rendered if `danger` is truthy.
+
+```html
+<button class="text-white p-2 rounded bg-blue-500">Click me!</button>
+<button class="text-white p-2 rounded bg-red-500">I am dangerous!</button>
+```
